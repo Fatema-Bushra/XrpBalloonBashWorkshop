@@ -12,13 +12,13 @@ public class Arm extends SubsystemBase {
   //FIELDS
   private static Arm instanceArm; 
   // Task 3A. Declare the XRPServo motor here
-
+private XRPServo poker;
 
   //CONSTRUCTOR METHOD
   public Arm() {
 
     //Task 3B. Construct the XRPServo object here
-
+poker = new XRPServo(5);
 
   }
 
@@ -31,10 +31,11 @@ public class Arm extends SubsystemBase {
   }
 
   //Reset arm method - moves arm to a 0 degree angle
-  public void resetArm(){
-    
+  public void moveArm(double angle){
+       
     //Task 3C. Set the XRPServo's angle to 0
-    
+    angle = 45;
+    poker.setAngle(angle);
   }
 
   //Task 3D. Write moveArm() method here - move arm to a specified angle
@@ -49,4 +50,9 @@ public class Arm extends SubsystemBase {
   public void periodic() {
     
   }
+
+public void resetArm() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'resetArm'");
+}
 }
